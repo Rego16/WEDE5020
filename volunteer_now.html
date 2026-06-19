@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,intial-scale=1.0">
+    <title> volunteer page- MAKALLA bright stars</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <img src="img/logo.png" width="300" height="100" alt="Makalla logo">
+        <!--This is navigation-->
+        <nav>
+            <button> <a href="index.html" class="nav-link">Home</a> </button>
+            <button> <a href="about_us.html" class="nav-link">About us</a> </button>
+            <button> <a href="donate.html" class="nav-link donate-btn">Donate</a> </button>
+            <button> <a href="contact_us.html" class="nav-link">Contact us</a> </button>
+        </nav>
+    </header>
+    <main>
+        <h2>Be The Reason a Star believes!</h2>
+        <button> <a href="volunteer.html" class="back-btn">back</a></button>
+        <section>
+            <h3>Volunteer Form</h3>
+
+            <form id="volunteerForm">
+                <ul>
+                    <li><label>Full Name & Surname *</label></li>
+                    <input type="text" id="volName" placeholder="Your answer">
+
+                    <li><label>Phone / WhatsApp Number *</label></li>
+                    <input type="tel" id="volPhone" placeholder="Your answer">
+
+                    <li><label>Email Address *</label></li>
+                    <input type="email" id="volEmail" placeholder="Your answer">
+
+                    <li><label>Why do you want to volunteer? *</label></li>
+                    <textarea id="volMessage" placeholder="Your answer"></textarea>
+
+                    <li><button type="submit">Submit Application</button></li>
+                </ul>
+                <p id="volError"></p>
+            </form>
+        </section>
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy 2021 MAKALLA Bright Stars. All rights reserved
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
