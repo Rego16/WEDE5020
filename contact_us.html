@@ -143,6 +143,52 @@
     </section>
 
     <script src="script.js"></script>
+    <script>
+// Copy to clipboard function
+function copyToClipboard(text, button) {
+  navigator.clipboard.writeText(text).then(() => {
+    // Change icon temporarily to show it worked
+    const originalText = button.innerHTML;
+    button.innerHTML = '✅';
+    button.style.color = 'green';
+   
+    setTimeout(() => {
+      button.innerHTML = originalText;
+      button.style.color = '';
+    }, 1500);
+  }).catch(err => {
+    alert('Failed to copy. Please copy manually: ' + text);
+  });
+}
+
+// Attach to all copy icons
+document.addEventListener('DOMContentLoaded', function() {
+  // Email copy buttons
+  const emailButtons = document.querySelectorAll('a[href^="mailto:"]');
+  emailButtons.forEach(emailLink => {
+    const copyBtn = emailLink.nextElementSibling;
+    if (copyBtn && copyBtn.innerHTML.includes('📋')) {
+      copyBtn.style.cursor = 'pointer';
+      copyBtn.onclick = () => copyToClipboard(emailLink.textContent, copyBtn);
+    }
+  });
+ 
+  // Phone/WhatsApp copy buttons - adjust selectors to match your HTML
+  const mobileText = '+27 67 353 6039';
+  const whatsappText = '+27 71 447 0166';
+ 
+  document.querySelectorAll('📋').forEach(btn => {
+    btn.style.cursor = 'pointer';
+    // Check which number to copy based on context
+    if (btn.previousElementSibling && btn.previousElementSibling.textContent.includes('Mobile')) {
+      btn.onclick = () => copyToClipboard(mobileText, btn);
+    }
+    if (btn.previousElementSibling && btn.previousElementSibling.textContent.includes('WhatsApp')) {
+      btn.onclick = () => copyToClipboard(whatsappText, btn);
+    }
+          });
+});
+</script>
 </body>
 
 </html>
